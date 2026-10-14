@@ -23,6 +23,7 @@ private slots:
     void allerPage(int index);
     void goLogin();
     void goEmployes();
+    void goSalles();
 
     void onConnexion();
     void onCGU();
@@ -32,7 +33,9 @@ private slots:
     void onProfil();
     void onDeconnexion();
 
-    void onEnvoyerQuestion();   // ← NOUVEAU
+    void onEnvoyerQuestion();   // Chatbot
+    void onSuggererSalle();
+    void onValiderQR();
 
 private:
     Ui::integration *ui;
@@ -40,8 +43,11 @@ private:
     void appliquerTheme();
     void connecterLogin();
     void connecterNavigation();
-    void connecterChatbot();    // ← NOUVEAU
+    void connecterChatbot();
+    void connecterActions();
     void remplirTableEmployes();
+    void remplirTableSalles();
+    void dessinerStatistiquesSalles();
     void dessinerStatistiques(); // ← NOUVEAU
 };
 

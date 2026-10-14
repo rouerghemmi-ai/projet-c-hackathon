@@ -16,6 +16,7 @@
 #include <QHeaderView>
 #include <QLineEdit>
 #include <QComboBox>
+#include <QSpinBox>
 #include <QFrame>
 #include <QColor>
 #include <QPainter>
@@ -37,9 +38,12 @@ integration::integration(QWidget *parent)
     connecterLogin();
     connecterNavigation();
     connecterChatbot();
+    connecterActions();
 
     remplirTableEmployes();
     dessinerStatistiques();
+    remplirTableSalles();
+    dessinerStatistiquesSalles();
 }
 
 integration::~integration()
@@ -312,6 +316,320 @@ void integration::dessinerStatistiques()
 /* ============================================================
  *  NAVIGATION
  * ============================================================ */
+static int randomInt(int min, int max)
+{
+    return QRandomGenerator::global()->bounded(min, max + 1);
+}
+
+void integration::connecterActions()
+{
+    if (ui->btnSuggerer_2)
+        QObject::connect(ui->btnSuggerer_2, &QPushButton::clicked,
+                         this, &integration::onSuggererSalle);
+
+    if (ui->btnValiderQR_4)
+        QObject::connect(ui->btnValiderQR_4, &QPushButton::clicked,
+                         this, &integration::onValiderQR);
+}
+
+
+void integration::remplirTableSalles()
+{
+    QString styleModifier = R"(
+        QPushButton {
+            background-color: #4338CA; color: #FFFFFF;
+            border: none; border-radius: 6px;
+            font-size: 10px; font-weight: 800;
+            padding: 6px 12px; min-width: 90px;
+        }
+        QPushButton:hover { background-color: #6366F1; }
+    )";
+
+    QString styleSupprimer = R"(
+        QPushButton {
+            background-color: #B91C1C; color: #FFFFFF;
+            border: none; border-radius: 6px;
+            font-size: 10px; font-weight: 800;
+            padding: 6px 12px; min-width: 90px;
+        }
+        QPushButton:hover { background-color: #F87171; }
+    )";
+
+    auto creerWidgetActions = [this, styleModifier, styleSupprimer](int row) {
+        auto *container = new QWidget;
+        auto *lay = new QHBoxLayout(container);
+        lay->setContentsMargins(4, 2, 4, 2);
+        lay->setSpacing(8);
+
+        auto *btnModif = new QPushButton("MODIFIER");
+        btnModif->setCursor(Qt::PointingHandCursor);
+        btnModif->setStyleSheet(styleModifier);
+        btnModif->setMinimumWidth(95);
+
+        auto *btnSuppr = new QPushButton("SUPPRIMER");
+        btnSuppr->setCursor(Qt::PointingHandCursor);
+        btnSuppr->setStyleSheet(styleSupprimer);
+        btnSuppr->setMinimumWidth(95);
+
+        lay->addWidget(btnModif);
+        lay->addWidget(btnSuppr);
+        lay->addStretch();
+
+        QObject::connect(btnModif, &QPushButton::clicked, this, [this, row]() {
+            QMessageBox::information(this, "Modifier",
+                                     QString("Modifier la ligne %1\n(Design uniquement)").arg(row + 1));
+        });
+
+        QObject::connect(btnSuppr, &QPushButton::clicked, this, [this, row]() {
+            QMessageBox::question(this, "Supprimer",
+                                  QString("Supprimer la ligne %1 ?\n(Design uniquement)").arg(row + 1));
+        });
+
+        return container;
+    };
+
+    auto *t = ui->tableSalles;
+    const int NB = 8;
+    t->setRowCount(NB);
+
+    QStringList types = {"Salle informatique", "Salle de réunion",
+                         "Salle conférence", "Laboratoire"};
+    QStringList dispos = {"Disponible", "Occupée", "Maintenance"};
+
+    for (int i = 0; i < NB; ++i) {
+        QString id = QString("SAL-%1").arg(i + 1, 3, 10, QChar('0'));
+        QString nom = QString("Salle %1").arg(i + 100);
+        QString cap = QString::number(randomInt(20, 250));
+        QString type = types[i % types.size()];
+        QString dispo = dispos[i % dispos.size()];
+
+        t->setItem(i, 0, new QTableWidgetItem(id));
+        t->setItem(i, 1, new QTableWidgetItem(nom));
+        t->setItem(i, 2, new QTableWidgetItem(cap));
+        t->setItem(i, 3, new QTableWidgetItem(type));
+
+        auto *itemDispo = new QTableWidgetItem(dispo);
+        if (dispo == "Disponible")      itemDispo->setForeground(QColor("#34D399"));
+        else if (dispo == "Occupée")    itemDispo->setForeground(QColor("#FBBF24"));
+        else                            itemDispo->setForeground(QColor("#F87171"));
+        t->setItem(i, 4, itemDispo);
+
+        t->setCellWidget(i, 5, creerWidgetActions(i));
+    }
+
+    // Configuration finale
+    t->verticalHeader()->setVisible(false);
+    t->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    t->setSelectionBehavior(QAbstractItemView::SelectRows);
+    t->setAlternatingRowColors(true);
+
+    int lastCol = t->columnCount() - 1;
+    for (int c = 0; c < lastCol; ++c) {
+        t->horizontalHeader()->setSectionResizeMode(c, QHeaderView::Stretch);
+    }
+    if (lastCol >= 0) {
+        t->horizontalHeader()->setSectionResizeMode(lastCol, QHeaderView::Fixed);
+        t->setColumnWidth(lastCol, 240);
+    }
+    t->verticalHeader()->setDefaultSectionSize(46);
+}
+
+/* ============================================================
+ *  STATISTIQUES : camembert + barres horizontales
+ * ============================================================ */
+
+
+void integration::dessinerStatistiquesSalles()
+{
+    /* ---------- 1) CAMEMBERT : Disponibilité ---------- */
+    {
+        QPixmap pix(240, 220);
+        pix.fill(Qt::transparent);
+        QPainter p(&pix);
+        p.setRenderHint(QPainter::Antialiasing);
+
+        int dispo = 0, occ = 0, maint = 0;
+        for (int i = 0; i < ui->tableSalles->rowCount(); ++i) {
+            QString s = ui->tableSalles->item(i, 4)->text();
+            if (s == "Disponible")      dispo++;
+            else if (s == "Occupée")    occ++;
+            else                        maint++;
+        }
+        int total = dispo + occ + maint;
+        if (total == 0) total = 1;
+
+        QRectF rect(20, 20, 140, 140);
+        double startAngle = 90.0;
+
+        auto drawSlice = [&](int val, const QColor &color) {
+            if (val <= 0) return;
+            double sweep = -360.0 * val / total;
+            p.setBrush(color);
+            p.setPen(Qt::NoPen);
+            p.drawPie(rect, int(startAngle * 16), int(sweep * 16));
+            startAngle += sweep;
+        };
+
+        drawSlice(dispo, QColor("#34D399"));
+        drawSlice(occ,   QColor("#FBBF24"));
+        drawSlice(maint, QColor("#F87171"));
+
+        // Légende
+        QFont f = p.font();
+        f.setPointSize(8);
+        f.setBold(true);
+        p.setFont(f);
+        p.setPen(QColor("#E5E7EB"));
+
+        p.setBrush(QColor("#34D399"));
+        p.drawRect(170, 30, 10, 10);
+        p.drawText(185, 39, QString("Dispo (%1)").arg(dispo));
+
+        p.setBrush(QColor("#FBBF24"));
+        p.drawRect(170, 55, 10, 10);
+        p.drawText(185, 64, QString("Occupée (%1)").arg(occ));
+
+        p.setBrush(QColor("#F87171"));
+        p.drawRect(170, 80, 10, 10);
+        p.drawText(185, 89, QString("Maint. (%1)").arg(maint));
+
+        f.setBold(false);
+        f.setPointSize(8);
+        p.setFont(f);
+        p.setPen(QColor("#94A3B8"));
+        p.drawText(20, 190, "Répartition par disponibilité");
+
+        p.end();
+        ui->sallesPage_labelStatutPie->setPixmap(pix);
+    }
+
+    /* ---------- 2) BARRES HORIZONTALES : Type de salle ---------- */
+    {
+        QPixmap pix(400, 220);
+        pix.fill(Qt::transparent);
+        QPainter p(&pix);
+        p.setRenderHint(QPainter::Antialiasing);
+
+        QMap<QString, int> types;
+        for (int i = 0; i < ui->tableSalles->rowCount(); ++i)
+            types[ui->tableSalles->item(i, 3)->text()]++;
+
+        int maxVal = 1;
+        for (int v : types) if (v > maxVal) maxVal = v;
+
+        auto couleur = [](const QString &t) -> QColor {
+            if (t == "Salle informatique") return QColor("#6366F1");
+            if (t == "Salle de réunion")   return QColor("#FBBF24");
+            if (t == "Salle conférence")   return QColor("#34D399");
+            return QColor("#F87171");
+        };
+
+        int y = 25;
+        const int barMaxW = 240;
+        const int barH = 26;
+
+        QFont f = p.font();
+        f.setPointSize(8);
+        f.setBold(true);
+        p.setFont(f);
+
+        for (auto it = types.begin(); it != types.end(); ++it) {
+            p.setPen(QColor("#E5E7EB"));
+            p.drawText(10, y + 17, it.key());
+
+            p.setPen(Qt::NoPen);
+            p.setBrush(QColor("#1F2937"));
+            p.drawRoundedRect(140, y, barMaxW, barH, 6, 6);
+
+            int w = int(barMaxW * (double)it.value() / maxVal);
+            p.setBrush(couleur(it.key()));
+            p.drawRoundedRect(140, y, w, barH, 6, 6);
+
+            p.setPen(QColor("#FFFFFF"));
+            p.drawText(140 + w + 8, y + 17, QString::number(it.value()));
+
+            y += barH + 18;
+        }
+
+        f.setBold(false);
+        f.setPointSize(8);
+        p.setFont(f);
+        p.setPen(QColor("#94A3B8"));
+        p.drawText(10, 200, "Nombre de salles par type");
+
+        p.end();
+        ui->sallesPage_labelRoleBar->setPixmap(pix);
+    }
+}
+
+/* ============================================================
+ *  NAVIGATION
+ * ============================================================ */
+
+
+void integration::onSuggererSalle()
+{
+    if (!ui->leEffectif_2) return;
+    QString effStr = ui->leEffectif_2->text().trimmed();
+    bool ok = false;
+    int effectif = effStr.toInt(&ok);
+
+    if (!ok || effectif <= 0) {
+        QMessageBox::warning(this, "Affectation",
+                             "Veuillez saisir un effectif valide (nombre entier > 0).");
+        return;
+    }
+
+    // Cherche la 1ère salle disponible avec capacité >= effectif
+    QString suggestion;
+    bool trouve = false;
+    for (int i = 0; i < ui->tableSalles->rowCount(); ++i) {
+        int cap = ui->tableSalles->item(i, 2)->text().toInt();
+        QString dispo = ui->tableSalles->item(i, 4)->text();
+        if (dispo == "Disponible" && cap >= effectif) {
+            suggestion = QString("<b>%1</b> (cap. %2) — type : %3")
+                             .arg(ui->tableSalles->item(i, 1)->text())
+                             .arg(cap)
+                             .arg(ui->tableSalles->item(i, 3)->text());
+            trouve = true;
+            break;
+        }
+    }
+
+    if (trouve) {
+        QMessageBox::information(this, "Affectation intelligente",
+                                 "Salle recommandée pour un effectif de " +
+                                     QString::number(effectif) + " :<br><br>" + suggestion);
+    } else {
+        QMessageBox::warning(this, "Affectation intelligente",
+                             "Aucune salle disponible ne peut accueillir " +
+                                 QString::number(effectif) + " personnes.");
+    }
+}
+
+
+void integration::onValiderQR()
+{
+    if (!ui->leCodeQR_4) return;
+    QString code = ui->leCodeQR_4->text().trimmed();
+
+    if (code.isEmpty()) {
+        QMessageBox::warning(this, "QR Code",
+                             "Veuillez saisir ou scanner un code.");
+        return;
+    }
+
+    QMessageBox::information(this, "QR Code · Accès",
+                             QString("Code <b>%1</b> validé.<br>Accès autorisé.").arg(code.toHtmlEscaped()));
+
+    ui->leCodeQR_4->clear();
+}
+
+/* ============================================================
+ *  LOGIN
+ * ============================================================ */
+
+
 void integration::allerPage(int index)
 {
     if (index < 0 || index >= ui->stackedWidget->count())
@@ -328,6 +646,7 @@ void integration::allerPage(int index)
 
 void integration::goLogin()     { allerPage(0); }
 void integration::goEmployes()  { allerPage(1); }
+void integration::goSalles()    { allerPage(2); }
 
 /* ============================================================
  *  LOGIN
@@ -358,6 +677,10 @@ void integration::connecterLogin()
  * ============================================================ */
 void integration::connecterNavigation()
 {
+    if (ui->btnEmployes) QObject::connect(ui->btnEmployes, &QPushButton::clicked, this, &integration::goEmployes);
+    if (ui->btnSalles)   QObject::connect(ui->btnSalles,   &QPushButton::clicked, this, &integration::goSalles);
+    if (ui->sallesPage_btnEmployes) QObject::connect(ui->sallesPage_btnEmployes, &QPushButton::clicked, this, &integration::goEmployes);
+    if (ui->sallesPage_btnSalles)   QObject::connect(ui->sallesPage_btnSalles,   &QPushButton::clicked, this, &integration::goSalles);
     if (ui->btnNotifications) QObject::connect(ui->btnNotifications, &QPushButton::clicked, this, &integration::onNotifications);
     if (ui->btnProfil)        QObject::connect(ui->btnProfil,        &QPushButton::clicked, this, &integration::onProfil);
     if (ui->btnDeconnexion)   QObject::connect(ui->btnDeconnexion,   &QPushButton::clicked, this, &integration::onDeconnexion);
