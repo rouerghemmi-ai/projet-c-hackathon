@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GestionEvaluateurs</class>
+ <widget class="QMainWindow" name="GestionEvaluateurs">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1450</width><height>850</height></rect></property>
+  <property name="minimumSize"><size><width>1100</width><height>700</height></size></property>
+  <property name="windowTitle"><string>Smart Hackathon Management - Gestion des évaluateurs</string></property>
+  <property name="styleSheet"><string notr="true">
+QMainWindow, QWidget#centralwidget { background-color: #f4f7fc; color: #0b1b42; font-family: "Segoe UI"; font-size: 13px; }
+QWidget#sidebar { background-color: #07143b; color: white; }
+QLabel#brandTitle { color: white; font-size: 25px; font-weight: 700; }
+QLabel#brandSubtitle { color: #e0e8fb; font-size: 20px; }
+QLabel#pageTitle { color: #0a1c42; font-size: 30px; font-weight: 700; }
+QLabel#subTitle { color: #7184a5; font-size: 13px; }
+QFrame#statCard { background: white; border: 1px solid #dfe7f2; border-radius: 13px; }
+QFrame#statCardBlue { background: #eef5ff; border: 1px solid #d5e5ff; border-radius: 13px; }
+QFrame#statCardRed { background: #fff1f1; border: 1px solid #ffd5d5; border-radius: 13px; }
+QFrame#statCardDistribution { background: white; border: 1px solid #dfe7f2; border-radius: 13px; }
+QLabel.statLabel { color: #5b7195; font-size: 13px; }
+QLabel.statValue { color: #173e78; font-size: 31px; font-weight: 700; }
+QLabel#lblInactifs { color: #d83f3f; font-size: 31px; font-weight: 700; }
+QLabel.sectionTitle { color: #0b1b42; font-size: 17px; font-weight: 700; }
+QLineEdit, QComboBox { background: white; border: 1px solid #d4deec; border-radius: 7px; padding: 9px 12px; min-height: 23px; color: #14294d; }
+QLineEdit:focus, QComboBox:focus { border: 1px solid #2870e3; }
+QPushButton { border-radius: 7px; padding: 10px 17px; font-weight: 600; }
+QPushButton#btnAjouter, QPushButton#btnRechercher, QPushButton#btnMetier1 { background: #2468df; color: white; border: none; }
+QPushButton#btnAjouter:hover, QPushButton#btnRechercher:hover, QPushButton#btnMetier1:hover { background: #1758c5; }
+QPushButton#btnAnnuler, QPushButton#btnTrier { background: #eef2f8; color: #18345d; border: 1px solid #d5deeb; }
+QPushButton#btnExporter { background: #168957; color: white; border: none; }
+QPushButton#btnModifier { background: #138b57; color: white; border: none; }
+QPushButton#btnSupprimer, QPushButton#btnDeconnexion { background: #dc4545; color: white; border: none; }
+QPushButton#btnMetier2 { background: transparent; color: #12845a; border: none; text-align: left; }
+QPushButton#menuButton { background: transparent; color: #e6edff; text-align: left; border: none; padding: 13px 15px; font-size: 14px; }
+QPushButton#menuButton:checked { background: #2468df; color: white; }
+QTableView { background: white; alternate-background-color: #f4f6f9; border: 1px solid #e0e7f1; gridline-color: #e6edf5; selection-background-color: #dce9ff; selection-color: #0b1b42; }
+QHeaderView::section { background: #234779; color: white; padding: 13px 8px; border: none; font-weight: 700; }
+QTableView QTableCornerButton::section { background: #234779; }
+  </string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayoutRoot">
+    <property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property>
+    <item>
+     <widget class="QWidget" name="sidebar" native="true">
+      <property name="minimumSize"><size><width>260</width><height>0</height></size></property><property name="maximumSize"><size><width>260</width><height>16777215</height></size></property>
+      <layout class="QVBoxLayout" name="verticalLayoutSidebar">
+       <property name="leftMargin"><number>20</number></property><property name="topMargin"><number>28</number></property><property name="rightMargin"><number>20</number></property><property name="bottomMargin"><number>18</number></property>
+       <item><widget class="QLabel" name="brandTitle"><property name="text"><string>Smart Hackathon</string></property></widget></item>
+       <item><widget class="QLabel" name="brandSubtitle"><property name="text"><string>Management</string></property></widget></item>
+       <item><spacer name="spacerTop"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>85</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="menuLabel"><property name="text"><string>MENU PRINCIPAL</string></property><property name="styleSheet"><string>color:#b9c9e9; padding-top:10px;</string></property></widget></item>
+       <item><widget class="QPushButton" name="menuButton"><property name="text"><string>▦   Tableau de Bord</string></property><property name="checkable"><bool>true</bool></property></widget></item>
+       <item><widget class="QPushButton" name="menuButton2"><property name="text"><string>●   Gestion des évaluateurs</string></property><property name="styleSheet"><string>background:#2468df;color:white;border-radius:8px;text-align:left;padding:13px;font-weight:700;</string></property></widget></item>
+       <item><widget class="QPushButton" name="menuButton3"><property name="text"><string>●   Gestion des participants</string></property><property name="styleSheet"><string>background:transparent;color:#e6edff;text-align:left;padding:13px;</string></property></widget></item>
+       <item><widget class="QPushButton" name="menuButton4"><property name="text"><string>◆   Gestion des sponsors</string></property><property name="styleSheet"><string>background:transparent;color:#e6edff;text-align:left;padding:13px;</string></property></widget></item>
+       <item><widget class="QPushButton" name="menuButton5"><property name="text"><string>▣   Gestion des projets</string></property><property name="styleSheet"><string>background:transparent;color:#e6edff;text-align:left;padding:13px;</string></property></widget></item>
+       <item><widget class="QPushButton" name="menuButton6"><property name="text"><string>▤   Gestion des salles</string></property><property name="styleSheet"><string>background:transparent;color:#e6edff;text-align:left;padding:13px;</string></property></widget></item>
+       <item><spacer name="spacerBottom"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>150</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="lblConnecte"><property name="text"><string>Connecté : Responsable</string></property><property name="styleSheet"><string>color:#b9c9e9;border-top:1px solid #26365d;padding-top:12px;</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnDeconnexion"><property name="text"><string>Déconnexion sécurisée</string></property></widget></item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="mainContent" native="true">
+      <layout class="QVBoxLayout" name="verticalLayoutMain">
+       <property name="leftMargin"><number>32</number></property><property name="topMargin"><number>28</number></property><property name="rightMargin"><number>28</number></property><property name="bottomMargin"><number>18</number></property><property name="spacing"><number>15</number></property>
+       <item><widget class="QLabel" name="pageTitle"><property name="text"><string>Gestion des évaluateurs</string></property></widget></item>
+       <item><widget class="QLabel" name="subTitle"><property name="text"><string>Entité : évaluateur  •  Utilisateurs : Responsables</string></property></widget></item>
+       <item>
+        <layout class="QHBoxLayout" name="statsLayout">
+         <property name="spacing"><number>16</number></property>
+         <item><widget class="QFrame" name="statCardBlue"><property name="minimumSize"><size><width>0</width><height>105</height></size></property><layout class="QVBoxLayout" name="statLayout1"><property name="leftMargin"><number>20</number></property><item><widget class="QLabel" name="labelTotal"><property name="text"><string>Nombre total d'évaluateurs</string></property><property name="styleSheet"><string>color:#5b7195;</string></property></widget></item><item><widget class="QLabel" name="lblTotal"><property name="text"><string>6</string></property><property name="styleSheet"><string>color:#173e78;font-size:31px;font-weight:700;</string></property></widget></item></layout></widget></item>
+         <item><widget class="QFrame" name="statCard"><property name="minimumSize"><size><width>0</width><height>105</height></size></property><layout class="QVBoxLayout" name="statLayout2"><property name="leftMargin"><number>20</number></property><item><widget class="QLabel" name="labelActifs"><property name="text"><string>Évaluateurs actifs</string></property><property name="styleSheet"><string>color:#5b7195;</string></property></widget></item><item><widget class="QLabel" name="lblActifs"><property name="text"><string>4</string></property><property name="styleSheet"><string>color:#173e78;font-size:31px;font-weight:700;</string></property></widget></item></layout></widget></item>
+         <item><widget class="QFrame" name="statCardRed"><property name="minimumSize"><size><width>0</width><height>105</height></size></property><layout class="QVBoxLayout" name="statLayout3"><property name="leftMargin"><number>20</number></property><item><widget class="QLabel" name="labelInactifs"><property name="text"><string>Évaluateurs inactifs</string></property><property name="styleSheet"><string>color:#a35a5a;</string></property></widget></item><item><widget class="QLabel" name="lblInactifs"><property name="text"><string>2</string></property></widget></item></layout></widget></item>
+         <item><widget class="QFrame" name="statCardDistribution"><property name="minimumSize"><size><width>0</width><height>105</height></size></property><layout class="QVBoxLayout" name="statLayout4"><property name="leftMargin"><number>20</number></property><item><widget class="QLabel" name="labelRepartition"><property name="text"><string>Répartition</string></property><property name="styleSheet"><string>color:#5b7195;</string></property></widget></item><item><widget class="QLabel" name="lblRepartition"><property name="text"><string>● Actifs : 66 %\n● Inactifs : 34 %</string></property><property name="styleSheet"><string>color:#168957;font-weight:700;</string></property></widget></item></layout></widget></item>
+        </layout>
+       </item>
+       <item><spacer name="spacerMid"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>8</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="formTitle"><property name="text"><string>Informations de l'évaluateur</string></property><property name="styleSheet"><string>font-size:17px;font-weight:700;color:#0b1b42;</string></property></widget></item>
+       <item>
+        <layout class="QHBoxLayout" name="formLayout">
+         <property name="spacing"><number>14</number></property>
+         <item><layout class="QVBoxLayout" name="idLayout"><item><widget class="QLabel" name="idLabel"><property name="text"><string>ID évaluateur</string></property><property name="styleSheet"><string>font-weight:600;color:#506587;</string></property></widget></item><item><widget class="QLineEdit" name="inputId"><property name="placeholderText"><string>E007</string></property></widget></item></layout></item>
+         <item><layout class="QVBoxLayout" name="nomLayout"><item><widget class="QLabel" name="nomLabel"><property name="text"><string>Nom</string></property><property name="styleSheet"><string>font-weight:600;color:#506587;</string></property></widget></item><item><widget class="QLineEdit" name="inputNom"><property name="placeholderText"><string>Nom</string></property></widget></item></layout></item>
+         <item><layout class="QVBoxLayout" name="prenomLayout"><item><widget class="QLabel" name="prenomLabel"><property name="text"><string>Prénom</string></property><property name="styleSheet"><string>font-weight:600;color:#506587;</string></property></widget></item><item><widget class="QLineEdit" name="inputPrenom"><property name="placeholderText"><string>Prénom</string></property></widget></item></layout></item>
+
+         <item><layout class="QVBoxLayout" name="statutLayout"><item><widget class="QLabel" name="statutLabel"><property name="text"><string>Statut</string></property><property name="styleSheet"><string>font-weight:600;color:#506587;</string></property></widget></item><item><widget class="QComboBox" name="comboStatut"/></item></layout></item>
+         <item><widget class="QPushButton" name="btnAjouter"><property name="text"><string>Ajouter</string></property><property name="minimumSize"><size><width>88</width><height>42</height></size></property></widget></item>
+         <item><widget class="QPushButton" name="btnAnnuler"><property name="text"><string>Annuler</string></property><property name="minimumSize"><size><width>88</width><height>42</height></size></property></widget></item>
+        </layout>
+       </item>
+       <item><spacer name="spacerList"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>12</height></size></property></spacer></item>
+       <item>
+        <layout class="QHBoxLayout" name="listHeaderLayout">
+         <item><widget class="QLabel" name="listTitle"><property name="text"><string>Liste des évaluateurs</string></property><property name="styleSheet"><string>font-size:17px;font-weight:700;color:#0b1b42;</string></property></widget></item>
+         <item><spacer name="listHeaderSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+         <item><widget class="QLineEdit" name="inputRecherche"><property name="minimumSize"><size><width>300</width><height>0</height></size></property><property name="placeholderText"><string>Rechercher un évaluateur...</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnRechercher"><property name="text"><string>Rechercher</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnTrier"><property name="text"><string>Trier</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnExporter"><property name="text"><string>Exporter</string></property></widget></item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableView" name="tableEvaluateurs">
+         <property name="minimumSize"><size><width>0</width><height>280</height></size></property>
+         <property name="alternatingRowColors"><bool>true</bool></property>
+         <property name="showGrid"><bool>true</bool></property>
+         <property name="sortingEnabled"><bool>false</bool></property>
+         <property name="selectionMode"><enum>QAbstractItemView::SingleSelection</enum></property>
+        </widget>
+       </item>
+       <item><spacer name="bottomSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>5</height></size></property></spacer></item>
+       <item>
+        <layout class="QHBoxLayout" name="metiersLayout">
+         <item><widget class="QPushButton" name="btnMetier1"><property name="text"><string>◆  Métier 1 : Tech Challenge Analyst</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnMetier2"><property name="text"><string>◆  Métier 2 : Project Feasibility Analyst</string></property></widget></item>
+         <item><spacer name="metierSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
