@@ -2,8 +2,8 @@
 #define INTEGRATION_H
 
 #include <QMainWindow>
-#include <QRandomGenerator>
 #include <QPushButton>
+#include <QLayout>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,29 +26,51 @@ private slots:
     void goSalles();
 
     void onConnexion();
-    void onCGU();
-    void onPolitique();
-    void onAPropos();
     void onNotifications();
     void onProfil();
     void onDeconnexion();
 
-    void onEnvoyerQuestion();   // Chatbot
+    void onEnvoyerQuestion();
     void onSuggererSalle();
     void onValiderQR();
+
+    // Module Salles — slots dédiés
+    void onAjouterSalle();
+    void onAnnulerSalle();
+    void onRechercherSalle();
+    void onTrierSalle();
+    void onExporterSalle();
+
+    // Slots publics pour les boutons MODIFIER / SUPPRIMER
+    void ouvrirModificationSalle(qint64 idSalle);
+    void ouvrirSuppressionSalle(qint64 idSalle, const QString &nomSalle);
 
 private:
     Ui::integration *ui;
 
+    // Installation
     void appliquerTheme();
     void connecterLogin();
     void connecterNavigation();
     void connecterChatbot();
     void connecterActions();
+
+    // Chargement
     void remplirTableEmployes();
     void remplirTableSalles();
+
+    // Statistiques
+    void dessinerStatistiques();
     void dessinerStatistiquesSalles();
-    void dessinerStatistiques(); // ← NOUVEAU
+
+    // Helpers internes
+    void rafraichirSallesEtStats();
+    void viderFormulaireSalle();
+
+    // Utilitaires ajoutés
+    void viderTableSalles();
+    QWidget *creerWidgetActions(qint64 idSalle, const QString &nomSalle);
+    // NOTE : creerWidgetActionsRecherche supprimée (déclarée mais jamais définie)
 };
 
 #endif // INTEGRATION_H

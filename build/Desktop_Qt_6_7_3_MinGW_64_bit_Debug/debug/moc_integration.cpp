@@ -41,14 +41,23 @@ constexpr auto qt_meta_stringdata_CLASSintegrationENDCLASS = QtMocHelpers::strin
     "index",
     "goLogin",
     "goEmployes",
+    "goSalles",
     "onConnexion",
-    "onCGU",
-    "onPolitique",
-    "onAPropos",
     "onNotifications",
     "onProfil",
     "onDeconnexion",
-    "onEnvoyerQuestion"
+    "onEnvoyerQuestion",
+    "onSuggererSalle",
+    "onValiderQR",
+    "onAjouterSalle",
+    "onAnnulerSalle",
+    "onRechercherSalle",
+    "onTrierSalle",
+    "onExporterSalle",
+    "ouvrirModificationSalle",
+    "idSalle",
+    "ouvrirSuppressionSalle",
+    "nomSalle"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -61,7 +70,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSintegrationENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,17 +78,24 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSintegrationENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   80,    2, 0x08,    1 /* Private */,
-       4,    0,   83,    2, 0x08,    3 /* Private */,
-       5,    0,   84,    2, 0x08,    4 /* Private */,
-       6,    0,   85,    2, 0x08,    5 /* Private */,
-       7,    0,   86,    2, 0x08,    6 /* Private */,
-       8,    0,   87,    2, 0x08,    7 /* Private */,
-       9,    0,   88,    2, 0x08,    8 /* Private */,
-      10,    0,   89,    2, 0x08,    9 /* Private */,
-      11,    0,   90,    2, 0x08,   10 /* Private */,
-      12,    0,   91,    2, 0x08,   11 /* Private */,
-      13,    0,   92,    2, 0x08,   12 /* Private */,
+       1,    1,  122,    2, 0x08,    1 /* Private */,
+       4,    0,  125,    2, 0x08,    3 /* Private */,
+       5,    0,  126,    2, 0x08,    4 /* Private */,
+       6,    0,  127,    2, 0x08,    5 /* Private */,
+       7,    0,  128,    2, 0x08,    6 /* Private */,
+       8,    0,  129,    2, 0x08,    7 /* Private */,
+       9,    0,  130,    2, 0x08,    8 /* Private */,
+      10,    0,  131,    2, 0x08,    9 /* Private */,
+      11,    0,  132,    2, 0x08,   10 /* Private */,
+      12,    0,  133,    2, 0x08,   11 /* Private */,
+      13,    0,  134,    2, 0x08,   12 /* Private */,
+      14,    0,  135,    2, 0x08,   13 /* Private */,
+      15,    0,  136,    2, 0x08,   14 /* Private */,
+      16,    0,  137,    2, 0x08,   15 /* Private */,
+      17,    0,  138,    2, 0x08,   16 /* Private */,
+      18,    0,  139,    2, 0x08,   17 /* Private */,
+      19,    1,  140,    2, 0x08,   18 /* Private */,
+      21,    2,  143,    2, 0x08,   20 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -93,6 +109,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSintegrationENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::LongLong,   20,
+    QMetaType::Void, QMetaType::LongLong, QMetaType::QString,   20,   22,
 
        0        // eod
 };
@@ -113,13 +136,9 @@ Q_CONSTINIT const QMetaObject integration::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'goEmployes'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'goSalles'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onConnexion'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onCGU'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onPolitique'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onAPropos'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onNotifications'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -128,7 +147,28 @@ Q_CONSTINIT const QMetaObject integration::staticMetaObject = { {
         // method 'onDeconnexion'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onEnvoyerQuestion'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onSuggererSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onValiderQR'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onAjouterSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onAnnulerSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onRechercherSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onTrierSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onExporterSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'ouvrirModificationSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<qint64, std::false_type>,
+        // method 'ouvrirSuppressionSalle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<qint64, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
     >,
     nullptr
 } };
@@ -142,14 +182,21 @@ void integration::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 0: _t->allerPage((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->goLogin(); break;
         case 2: _t->goEmployes(); break;
-        case 3: _t->onConnexion(); break;
-        case 4: _t->onCGU(); break;
-        case 5: _t->onPolitique(); break;
-        case 6: _t->onAPropos(); break;
-        case 7: _t->onNotifications(); break;
-        case 8: _t->onProfil(); break;
-        case 9: _t->onDeconnexion(); break;
-        case 10: _t->onEnvoyerQuestion(); break;
+        case 3: _t->goSalles(); break;
+        case 4: _t->onConnexion(); break;
+        case 5: _t->onNotifications(); break;
+        case 6: _t->onProfil(); break;
+        case 7: _t->onDeconnexion(); break;
+        case 8: _t->onEnvoyerQuestion(); break;
+        case 9: _t->onSuggererSalle(); break;
+        case 10: _t->onValiderQR(); break;
+        case 11: _t->onAjouterSalle(); break;
+        case 12: _t->onAnnulerSalle(); break;
+        case 13: _t->onRechercherSalle(); break;
+        case 14: _t->onTrierSalle(); break;
+        case 15: _t->onExporterSalle(); break;
+        case 16: _t->ouvrirModificationSalle((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
+        case 17: _t->ouvrirSuppressionSalle((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         default: ;
         }
     }
@@ -174,13 +221,13 @@ int integration::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 18)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 18;
     }
     return _id;
 }

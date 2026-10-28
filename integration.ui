@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>integration</class>
  <widget class="QMainWindow" name="integration">
@@ -30,15 +30,15 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="pageLogin">
-     <widget class="QFrame" name="frameLoginCard">
+     <widget class="QFrame" name="frameLoginBrand">
       <property name="geometry">
        <rect>
         <x>320</x>
         <y>140</y>
-        <width>800</width>
+        <width>380</width>
         <height>620</height>
        </rect>
       </property>
@@ -49,12 +49,12 @@
        <enum>QFrame::Shadow::Raised</enum>
       </property>
      </widget>
-     <widget class="QFrame" name="frameLoginBrand">
+     <widget class="QFrame" name="frameLoginCard">
       <property name="geometry">
        <rect>
-        <x>320</x>
+        <x>700</x>
         <y>140</y>
-        <width>380</width>
+        <width>420</width>
         <height>620</height>
        </rect>
       </property>
@@ -115,7 +115,7 @@
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>440</y>
+        <y>450</y>
         <width>340</width>
         <height>25</height>
        </rect>
@@ -150,35 +150,13 @@
        </font>
       </property>
       <property name="text">
-       <string>Plateforme intelligente de gestion de hackathons universitaires.</string>
+       <string>Plateforme intelligente de gestion de hackathons.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="labelLoginBrandVersion">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>670</y>
-        <width>180</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>VERSION 1.0.0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="labelLoginBrandTeam">
@@ -207,9 +185,9 @@
      <widget class="QLabel" name="labelLoginTitle">
       <property name="geometry">
        <rect>
-        <x>780</x>
+        <x>760</x>
         <y>220</y>
-        <width>280</width>
+        <width>300</width>
         <height>40</height>
        </rect>
       </property>
@@ -221,36 +199,14 @@
        </font>
       </property>
       <property name="text">
-       <string>Bienvenue</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="labelLoginSub">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>265</y>
-        <width>320</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Connectez-vous pour accéder à votre espace.</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
+       <string>Connexion</string>
       </property>
      </widget>
      <widget class="QLabel" name="labelLoginField">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>340</y>
+        <x>760</x>
+        <y>310</y>
         <width>200</width>
         <height>20</height>
        </rect>
@@ -269,8 +225,8 @@
      <widget class="QLineEdit" name="lineEditIdentifiant">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>365</y>
+        <x>760</x>
+        <y>340</y>
         <width>320</width>
         <height>45</height>
        </rect>
@@ -288,8 +244,8 @@
      <widget class="QLabel" name="labelLoginField2">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>430</y>
+        <x>760</x>
+        <y>400</y>
         <width>200</width>
         <height>20</height>
        </rect>
@@ -308,8 +264,8 @@
      <widget class="QLineEdit" name="lineEditMotDePasse">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>455</y>
+        <x>760</x>
+        <y>430</y>
         <width>320</width>
         <height>45</height>
        </rect>
@@ -330,8 +286,8 @@
      <widget class="QCheckBox" name="checkBoxSouvenir">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>515</y>
+        <x>760</x>
+        <y>480</y>
         <width>200</width>
         <height>25</height>
        </rect>
@@ -343,14 +299,14 @@
        </font>
       </property>
       <property name="text">
-       <string>Se souvenir de moi</string>
+       <string>Afficher le mot de passe</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButtonConnexion">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>555</y>
+        <x>760</x>
+        <y>520</y>
         <width>320</width>
         <height>50</height>
        </rect>
@@ -369,77 +325,11 @@
        <string>SE CONNECTER</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButtonCGU">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>630</y>
-        <width>320</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>Conditions générales d'utilisation</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButtonPolitique">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>655</y>
-        <width>320</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>Politique d'utilisation</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButtonAPropos">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>680</y>
-        <width>320</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>À propos de HACKNOVA</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="labelLoginFooter">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>720</y>
+        <x>750</x>
+        <y>580</y>
         <width>320</width>
         <height>20</height>
        </rect>
@@ -447,11 +337,12 @@
       <property name="font">
        <font>
         <family>Times New Roman</family>
-        <pointsize>8</pointsize>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>© 2025 HACKNOVA — Tous droits réservés</string>
+       <string>Mot de passe oublié</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -495,7 +386,7 @@
           <x>9</x>
           <y>10</y>
           <width>1401</width>
-          <height>76</height>
+          <height>70</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -507,10 +398,10 @@
         <widget class="QLabel" name="labelNavLogo">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>15</x>
            <y>10</y>
-           <width>61</width>
-           <height>61</height>
+           <width>50</width>
+           <height>50</height>
           </rect>
          </property>
          <property name="font">
@@ -521,7 +412,7 @@
           </font>
          </property>
          <property name="text">
-          <string />
+          <string>HN</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -531,10 +422,10 @@
        <widget class="QLabel" name="labelNavBrand">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>20</y>
+          <x>80</x>
+          <y>15</y>
           <width>140</width>
-          <height>28</height>
+          <height>24</height>
          </rect>
         </property>
         <property name="font">
@@ -551,10 +442,10 @@
        <widget class="QLabel" name="labelNavSub">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>50</y>
+          <x>80</x>
+          <y>40</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -571,10 +462,10 @@
        <widget class="QPushButton" name="btnDashboard">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>30</y>
-          <width>130</width>
-          <height>40</height>
+          <x>240</x>
+          <y>20</y>
+          <width>120</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -594,10 +485,10 @@
        <widget class="QPushButton" name="btnEmployes">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>30</y>
+          <x>365</x>
+          <y>20</y>
           <width>100</width>
-          <height>40</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -617,10 +508,10 @@
        <widget class="QPushButton" name="btnSalles">
         <property name="geometry">
          <rect>
-          <x>480</x>
-          <y>30</y>
-          <width>100</width>
-          <height>40</height>
+          <x>470</x>
+          <y>20</y>
+          <width>90</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -640,10 +531,10 @@
        <widget class="QPushButton" name="btnEvaluateurs">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>30</y>
-          <width>130</width>
-          <height>40</height>
+          <x>565</x>
+          <y>20</y>
+          <width>110</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -663,10 +554,10 @@
        <widget class="QPushButton" name="btnParticipants">
         <property name="geometry">
          <rect>
-          <x>730</x>
-          <y>30</y>
-          <width>130</width>
-          <height>40</height>
+          <x>680</x>
+          <y>20</y>
+          <width>110</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -686,10 +577,10 @@
        <widget class="QPushButton" name="btnSponsors">
         <property name="geometry">
          <rect>
-          <x>870</x>
-          <y>30</y>
-          <width>110</width>
-          <height>40</height>
+          <x>795</x>
+          <y>20</y>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -709,10 +600,10 @@
        <widget class="QPushButton" name="btnProjets">
         <property name="geometry">
          <rect>
-          <x>990</x>
-          <y>30</y>
-          <width>100</width>
-          <height>40</height>
+          <x>900</x>
+          <y>20</y>
+          <width>90</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -732,10 +623,10 @@
        <widget class="QPushButton" name="btnNotifications">
         <property name="geometry">
          <rect>
-          <x>1100</x>
-          <y>30</y>
+          <x>995</x>
+          <y>20</y>
           <width>110</width>
-          <height>40</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -755,10 +646,10 @@
        <widget class="QPushButton" name="btnProfil">
         <property name="geometry">
          <rect>
-          <x>1215</x>
-          <y>30</y>
+          <x>1110</x>
+          <y>20</y>
           <width>80</width>
-          <height>40</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -778,10 +669,10 @@
        <widget class="QPushButton" name="btnDeconnexion">
         <property name="geometry">
          <rect>
-          <x>1300</x>
-          <y>30</y>
-          <width>101</width>
-          <height>40</height>
+          <x>1195</x>
+          <y>20</y>
+          <width>110</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -802,9 +693,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>100</y>
+          <y>90</y>
           <width>600</width>
-          <height>36</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -822,9 +713,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>140</y>
+          <y>125</y>
           <width>800</width>
-          <height>22</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="font">
@@ -841,9 +732,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>170</y>
-          <width>1391</width>
-          <height>181</height>
+          <y>155</y>
+          <width>1161</width>
+          <height>170</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -857,7 +748,7 @@
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>180</y>
+          <y>165</y>
           <width>500</width>
           <height>25</height>
          </rect>
@@ -876,10 +767,10 @@
        <widget class="QLabel" name="lblEmpID">
         <property name="geometry">
          <rect>
-          <x>50</x>
-          <y>220</y>
+          <x>40</x>
+          <y>200</y>
           <width>120</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -897,9 +788,9 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>240</y>
+          <y>218</y>
           <width>150</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -919,9 +810,9 @@
         <property name="geometry">
          <rect>
           <x>230</x>
-          <y>220</y>
+          <y>200</y>
           <width>120</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -939,9 +830,9 @@
         <property name="geometry">
          <rect>
           <x>230</x>
-          <y>240</y>
-          <width>200</width>
-          <height>40</height>
+          <y>218</y>
+          <width>150</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -957,10 +848,10 @@
        <widget class="QLabel" name="lblEmpPrenom">
         <property name="geometry">
          <rect>
-          <x>450</x>
-          <y>220</y>
+          <x>420</x>
+          <y>200</y>
           <width>120</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -977,10 +868,10 @@
        <widget class="QLineEdit" name="lineEditEmpPrenom">
         <property name="geometry">
          <rect>
-          <x>450</x>
-          <y>240</y>
-          <width>200</width>
-          <height>40</height>
+          <x>420</x>
+          <y>218</y>
+          <width>150</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -996,10 +887,10 @@
        <widget class="QLabel" name="lblEmpMdp">
         <property name="geometry">
          <rect>
-          <x>670</x>
-          <y>220</y>
+          <x>610</x>
+          <y>200</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -1016,10 +907,10 @@
        <widget class="QLineEdit" name="lineEditEmpMdp">
         <property name="geometry">
          <rect>
-          <x>670</x>
-          <y>240</y>
-          <width>200</width>
-          <height>40</height>
+          <x>610</x>
+          <y>218</y>
+          <width>150</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1038,10 +929,10 @@
        <widget class="QLabel" name="lblEmpRole">
         <property name="geometry">
          <rect>
-          <x>890</x>
-          <y>220</y>
+          <x>800</x>
+          <y>200</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -1058,10 +949,10 @@
        <widget class="QComboBox" name="comboBoxEmpRole">
         <property name="geometry">
          <rect>
-          <x>890</x>
-          <y>240</y>
-          <width>220</width>
-          <height>40</height>
+          <x>800</x>
+          <y>218</y>
+          <width>161</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1072,22 +963,22 @@
         </property>
         <item>
          <property name="text">
-          <string>Administrateur</string>
+          <string>Responsable RH</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Responsable RH</string>
+          <string>Administrateur</string>
          </property>
         </item>
        </widget>
        <widget class="QLabel" name="lblEmpStatut">
         <property name="geometry">
          <rect>
-          <x>1130</x>
-          <y>220</y>
+          <x>990</x>
+          <y>200</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -1104,10 +995,10 @@
        <widget class="QComboBox" name="comboBoxEmpStatut">
         <property name="geometry">
          <rect>
-          <x>1130</x>
-          <y>240</y>
-          <width>200</width>
-          <height>40</height>
+          <x>990</x>
+          <y>218</y>
+          <width>150</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1131,9 +1022,9 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>300</y>
+          <y>270</y>
           <width>120</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1153,10 +1044,10 @@
        <widget class="QPushButton" name="btn_Annuler">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>300</y>
+          <x>175</x>
+          <y>270</y>
           <width>120</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1177,22 +1068,22 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>360</y>
-          <width>351</width>
-          <height>51</height>
+          <y>345</y>
+          <width>350</width>
+          <height>40</height>
          </rect>
         </property>
         <property name="placeholderText">
-         <string>Rechercher un employé par son id </string>
+         <string>Rechercher un employé par son id</string>
         </property>
        </widget>
        <widget class="QPushButton" name="btnRechercherEmploye">
         <property name="geometry">
          <rect>
           <x>380</x>
-          <y>360</y>
-          <width>130</width>
-          <height>51</height>
+          <y>350</y>
+          <width>120</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1212,10 +1103,10 @@
        <widget class="QPushButton" name="btnTrierEmploye">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>359</y>
+          <x>515</x>
+          <y>350</y>
           <width>120</width>
-          <height>51</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1235,10 +1126,10 @@
        <widget class="QPushButton" name="btnExporterEmploye">
         <property name="geometry">
          <rect>
-          <x>670</x>
-          <y>359</y>
-          <width>130</width>
-          <height>51</height>
+          <x>650</x>
+          <y>350</y>
+          <width>120</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -1259,9 +1150,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>420</y>
-          <width>931</width>
-          <height>461</height>
+          <y>405</y>
+          <width>911</width>
+          <height>420</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1273,10 +1164,10 @@
         <widget class="QTableWidget" name="tableEmployes">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>50</y>
-           <width>891</width>
-           <height>391</height>
+           <x>15</x>
+           <y>35</y>
+           <width>881</width>
+           <height>370</height>
           </rect>
          </property>
          <property name="font">
@@ -1333,10 +1224,10 @@
         <widget class="QLabel" name="labelTableTitleEmployes">
          <property name="geometry">
           <rect>
-           <x>20</x>
+           <x>15</x>
            <y>10</y>
            <width>500</width>
-           <height>25</height>
+           <height>20</height>
           </rect>
          </property>
          <property name="font">
@@ -1354,10 +1245,10 @@
        <widget class="QFrame" name="frameChatbot">
         <property name="geometry">
          <rect>
-          <x>951</x>
-          <y>420</y>
-          <width>451</width>
-          <height>220</height>
+          <x>931</x>
+          <y>349</y>
+          <width>481</width>
+          <height>240</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1366,84 +1257,95 @@
         <property name="frameShadow">
          <enum>QFrame::Shadow::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_6">
-         <property name="spacing">
-          <number>10</number>
+        <widget class="QLabel" name="lblTitreChatbot">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>461</width>
+           <height>20</height>
+          </rect>
          </property>
-         <property name="leftMargin">
-          <number>15</number>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
          </property>
-         <property name="topMargin">
-          <number>15</number>
+         <property name="text">
+          <string>🤖 Chatbot intelligent d'assistance</string>
          </property>
-         <property name="rightMargin">
-          <number>15</number>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <property name="bottomMargin">
-          <number>15</number>
+        </widget>
+        <widget class="QTextBrowser" name="textChatbot">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>35</y>
+           <width>451</width>
+           <height>110</height>
+          </rect>
          </property>
-         <item>
-          <widget class="QLabel" name="lblTitreChatbot">
-           <property name="font">
-            <font>
-             <family>Arial</family>
-             <pointsize>11</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>🤖 Chatbot intelligent d'assistance</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTextBrowser" name="textChatbot">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>110</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frameSaisieChatbot">
-           <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Shadow::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
-            <item>
-             <widget class="QLineEdit" name="leQuestion">
-              <property name="placeholderText">
-               <string>Écrivez votre question...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnEnvoyer">
-              <property name="text">
-               <string>Envoyer</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>110</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QFrame" name="frameSaisieChatbot">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>155</y>
+           <width>451</width>
+           <height>65</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLineEdit" name="leQuestion">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>16</y>
+            <width>320</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>Écrivez votre question...</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnEnvoyer">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>16</y>
+            <width>100</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Envoyer</string>
+          </property>
+         </widget>
+        </widget>
        </widget>
        <widget class="QFrame" name="cardStats">
         <property name="geometry">
          <rect>
-          <x>951</x>
-          <y>640</y>
-          <width>451</width>
-          <height>230</height>
+          <x>931</x>
+          <y>610</y>
+          <width>481</width>
+          <height>250</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1458,7 +1360,7 @@
            <x>15</x>
            <y>10</y>
            <width>400</width>
-           <height>25</height>
+           <height>20</height>
           </rect>
          </property>
          <property name="font">
@@ -1475,27 +1377,27 @@
         <widget class="QLabel" name="labelStatutPie">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>40</y>
+           <x>5</x>
+           <y>35</y>
            <width>210</width>
-           <height>185</height>
+           <height>210</height>
           </rect>
          </property>
          <property name="text">
-          <string />
+          <string/>
          </property>
         </widget>
         <widget class="QLabel" name="labelRoleBar">
          <property name="geometry">
           <rect>
-           <x>225</x>
-           <y>40</y>
-           <width>220</width>
-           <height>185</height>
+           <x>220</x>
+           <y>35</y>
+           <width>250</width>
+           <height>210</height>
           </rect>
          </property>
          <property name="text">
-          <string />
+          <string/>
          </property>
         </widget>
        </widget>
@@ -1503,7 +1405,7 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>930</y>
+          <y>840</y>
           <width>900</width>
           <height>20</height>
          </rect>
@@ -1558,7 +1460,7 @@
           <x>9</x>
           <y>10</y>
           <width>1401</width>
-          <height>76</height>
+          <height>70</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1570,10 +1472,10 @@
         <widget class="QLabel" name="sallesPage_labelNavLogo">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>15</x>
            <y>10</y>
-           <width>61</width>
-           <height>61</height>
+           <width>50</width>
+           <height>50</height>
           </rect>
          </property>
          <property name="font">
@@ -1584,7 +1486,7 @@
           </font>
          </property>
          <property name="text">
-          <string />
+          <string>HN</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1594,10 +1496,10 @@
        <widget class="QLabel" name="sallesPage_labelNavBrand">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>20</y>
+          <x>80</x>
+          <y>15</y>
           <width>140</width>
-          <height>28</height>
+          <height>24</height>
          </rect>
         </property>
         <property name="font">
@@ -1614,10 +1516,10 @@
        <widget class="QLabel" name="sallesPage_labelNavSub">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>50</y>
+          <x>80</x>
+          <y>40</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -1635,9 +1537,9 @@
         <property name="geometry">
          <rect>
           <x>230</x>
-          <y>30</y>
-          <width>130</width>
-          <height>40</height>
+          <y>20</y>
+          <width>120</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1657,10 +1559,10 @@
        <widget class="QPushButton" name="sallesPage_btnEmployes">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>30</y>
-          <width>100</width>
-          <height>40</height>
+          <x>355</x>
+          <y>20</y>
+          <width>90</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1680,10 +1582,10 @@
        <widget class="QPushButton" name="sallesPage_btnSalles">
         <property name="geometry">
          <rect>
-          <x>480</x>
-          <y>30</y>
-          <width>100</width>
-          <height>40</height>
+          <x>450</x>
+          <y>20</y>
+          <width>90</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1703,10 +1605,10 @@
        <widget class="QPushButton" name="sallesPage_btnEvaluateurs">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>30</y>
-          <width>130</width>
-          <height>40</height>
+          <x>545</x>
+          <y>20</y>
+          <width>110</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1726,10 +1628,10 @@
        <widget class="QPushButton" name="sallesPage_btnParticipants">
         <property name="geometry">
          <rect>
-          <x>730</x>
-          <y>30</y>
-          <width>130</width>
-          <height>40</height>
+          <x>660</x>
+          <y>20</y>
+          <width>110</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1749,10 +1651,10 @@
        <widget class="QPushButton" name="sallesPage_btnSponsors">
         <property name="geometry">
          <rect>
-          <x>870</x>
-          <y>30</y>
-          <width>110</width>
-          <height>40</height>
+          <x>775</x>
+          <y>20</y>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1772,10 +1674,10 @@
        <widget class="QPushButton" name="sallesPage_btnProjets">
         <property name="geometry">
          <rect>
-          <x>990</x>
-          <y>30</y>
-          <width>100</width>
-          <height>40</height>
+          <x>880</x>
+          <y>20</y>
+          <width>90</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1795,10 +1697,10 @@
        <widget class="QPushButton" name="sallesPage_btnNotifications">
         <property name="geometry">
          <rect>
-          <x>1100</x>
-          <y>30</y>
+          <x>975</x>
+          <y>20</y>
           <width>110</width>
-          <height>40</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1818,10 +1720,10 @@
        <widget class="QPushButton" name="sallesPage_btnProfil">
         <property name="geometry">
          <rect>
-          <x>1215</x>
-          <y>30</y>
+          <x>1090</x>
+          <y>20</y>
           <width>80</width>
-          <height>40</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1841,10 +1743,10 @@
        <widget class="QPushButton" name="sallesPage_btnDeconnexion">
         <property name="geometry">
          <rect>
-          <x>1300</x>
-          <y>30</y>
-          <width>101</width>
-          <height>40</height>
+          <x>1175</x>
+          <y>20</y>
+          <width>110</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1865,9 +1767,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>100</y>
+          <y>90</y>
           <width>600</width>
-          <height>36</height>
+          <height>30</height>
          </rect>
         </property>
         <property name="font">
@@ -1885,9 +1787,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>140</y>
+          <y>125</y>
           <width>800</width>
-          <height>22</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="font">
@@ -1904,9 +1806,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>170</y>
-          <width>1391</width>
-          <height>181</height>
+          <y>155</y>
+          <width>981</width>
+          <height>161</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1920,9 +1822,9 @@
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>180</y>
+          <y>165</y>
           <width>500</width>
-          <height>25</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="font">
@@ -1939,10 +1841,10 @@
        <widget class="QLabel" name="lblSalleID">
         <property name="geometry">
          <rect>
-          <x>50</x>
-          <y>220</y>
+          <x>40</x>
+          <y>195</y>
           <width>120</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -1960,9 +1862,9 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>240</y>
+          <y>213</y>
           <width>150</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="readOnly">
@@ -1976,9 +1878,9 @@
         <property name="geometry">
          <rect>
           <x>230</x>
-          <y>220</y>
+          <y>195</y>
           <width>120</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -1996,9 +1898,9 @@
         <property name="geometry">
          <rect>
           <x>230</x>
-          <y>240</y>
-          <width>220</width>
-          <height>40</height>
+          <y>213</y>
+          <width>150</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="placeholderText">
@@ -2008,10 +1910,10 @@
        <widget class="QLabel" name="lblSalleCapacite">
         <property name="geometry">
          <rect>
-          <x>480</x>
-          <y>220</y>
+          <x>430</x>
+          <y>195</y>
           <width>120</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -2028,10 +1930,10 @@
        <widget class="QSpinBox" name="spinBoxSalleCapacite">
         <property name="geometry">
          <rect>
-          <x>480</x>
-          <y>240</y>
+          <x>430</x>
+          <y>213</y>
           <width>150</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="maximum">
@@ -2041,10 +1943,10 @@
        <widget class="QLabel" name="lblSalleType">
         <property name="geometry">
          <rect>
-          <x>660</x>
-          <y>220</y>
+          <x>620</x>
+          <y>195</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -2061,10 +1963,10 @@
        <widget class="QComboBox" name="comboBoxSalleType">
         <property name="geometry">
          <rect>
-          <x>660</x>
-          <y>240</y>
-          <width>220</width>
-          <height>40</height>
+          <x>620</x>
+          <y>213</y>
+          <width>161</width>
+          <height>32</height>
          </rect>
         </property>
         <item>
@@ -2096,10 +1998,10 @@
        <widget class="QLabel" name="lblSalleDispo">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>220</y>
+          <x>820</x>
+          <y>195</y>
           <width>140</width>
-          <height>18</height>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -2116,10 +2018,10 @@
        <widget class="QComboBox" name="comboBoxSalleDispo">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>240</y>
-          <width>200</width>
-          <height>40</height>
+          <x>820</x>
+          <y>213</y>
+          <width>150</width>
+          <height>32</height>
          </rect>
         </property>
         <item>
@@ -2142,9 +2044,9 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>300</y>
+          <y>260</y>
           <width>120</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -2165,9 +2067,9 @@
         <property name="geometry">
          <rect>
           <x>180</x>
-          <y>300</y>
+          <y>260</y>
           <width>120</width>
-          <height>40</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -2188,9 +2090,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>360</y>
-          <width>351</width>
-          <height>51</height>
+          <y>325</y>
+          <width>350</width>
+          <height>40</height>
          </rect>
         </property>
         <property name="placeholderText">
@@ -2201,9 +2103,9 @@
         <property name="geometry">
          <rect>
           <x>380</x>
-          <y>360</y>
-          <width>130</width>
-          <height>51</height>
+          <y>330</y>
+          <width>120</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -2223,10 +2125,10 @@
        <widget class="QPushButton" name="btnTrierSalle">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>359</y>
+          <x>515</x>
+          <y>330</y>
           <width>120</width>
-          <height>51</height>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -2246,10 +2148,10 @@
        <widget class="QPushButton" name="btnExporterSalle">
         <property name="geometry">
          <rect>
-          <x>670</x>
-          <y>359</y>
-          <width>130</width>
-          <height>51</height>
+          <x>650</x>
+          <y>330</y>
+          <width>120</width>
+          <height>32</height>
          </rect>
         </property>
         <property name="font">
@@ -2270,9 +2172,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>420</y>
+          <y>385</y>
           <width>801</width>
-          <height>461</height>
+          <height>430</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -2284,10 +2186,10 @@
         <widget class="QTableWidget" name="tableSalles">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>50</y>
-           <width>761</width>
-           <height>391</height>
+           <x>15</x>
+           <y>40</y>
+           <width>771</width>
+           <height>380</height>
           </rect>
          </property>
          <property name="editTriggers">
@@ -2330,10 +2232,10 @@
         <widget class="QLabel" name="labelTableTitleSalles">
          <property name="geometry">
           <rect>
-           <x>20</x>
+           <x>15</x>
            <y>10</y>
            <width>500</width>
-           <height>25</height>
+           <height>20</height>
           </rect>
          </property>
          <property name="font">
@@ -2352,9 +2254,9 @@
         <property name="geometry">
          <rect>
           <x>830</x>
-          <y>420</y>
-          <width>571</width>
-          <height>220</height>
+          <y>385</y>
+          <width>581</width>
+          <height>205</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -2363,82 +2265,93 @@
         <property name="frameShadow">
          <enum>QFrame::Shadow::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="spacing">
-          <number>10</number>
+        <widget class="QLabel" name="lblTitreAffect_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>15</y>
+           <width>541</width>
+           <height>20</height>
+          </rect>
          </property>
-         <property name="leftMargin">
-          <number>15</number>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
          </property>
-         <property name="topMargin">
-          <number>15</number>
+         <property name="text">
+          <string>Affectation intelligente des salles · Automatique</string>
          </property>
-         <property name="rightMargin">
-          <number>15</number>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <property name="bottomMargin">
-          <number>15</number>
+        </widget>
+        <widget class="QLabel" name="lblDescAffect_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>45</y>
+           <width>541</width>
+           <height>50</height>
+          </rect>
          </property>
-         <item>
-          <widget class="QLabel" name="lblTitreAffect_2">
-           <property name="font">
-            <font>
-             <pointsize>11</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Affectation intelligente des salles · Automatique</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lblDescAffect_2">
-           <property name="text">
-            <string>  Proposer la meilleure salle selon l'effectif
+         <property name="text">
+          <string>  Proposer la meilleure salle selon l'effectif
   Détecter les conflits de créneaux
   Réaffecter automatiquement en cas de maintenance</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frameSaisieAffect_2">
-           <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLineEdit" name="leEffectif_2">
-              <property name="placeholderText">
-               <string>Effectif de l'équipe (ex. 6)</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnSuggerer_2">
-              <property name="text">
-               <string>Suggérer</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QFrame" name="frameSaisieAffect_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>115</y>
+           <width>541</width>
+           <height>65</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::Box</enum>
+         </property>
+         <widget class="QLineEdit" name="leEffectif_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>15</y>
+            <width>400</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>Effectif de l'équipe (ex. 6)</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnSuggerer_2">
+          <property name="geometry">
+           <rect>
+            <x>420</x>
+            <y>15</y>
+            <width>110</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Suggérer</string>
+          </property>
+         </widget>
+        </widget>
        </widget>
        <widget class="QFrame" name="frameQR_4">
         <property name="geometry">
          <rect>
           <x>830</x>
-          <y>650</y>
-          <width>571</width>
-          <height>220</height>
+          <y>600</y>
+          <width>581</width>
+          <height>215</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -2447,82 +2360,112 @@
         <property name="frameShadow">
          <enum>QFrame::Shadow::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <property name="spacing">
-          <number>10</number>
+        <widget class="QLabel" name="lblTitreQR_4">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>15</y>
+           <width>281</width>
+           <height>20</height>
+          </rect>
          </property>
-         <property name="leftMargin">
-          <number>15</number>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
          </property>
-         <property name="topMargin">
-          <number>15</number>
+         <property name="text">
+          <string>QR Code · Accès et présence</string>
          </property>
-         <property name="rightMargin">
-          <number>15</number>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <property name="bottomMargin">
-          <number>15</number>
+        </widget>
+        <widget class="QLabel" name="lblDescQR_4">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>45</y>
+           <width>541</width>
+           <height>50</height>
+          </rect>
          </property>
-         <item>
-          <widget class="QLabel" name="lblTitreQR_4">
-           <property name="font">
-            <font>
-             <pointsize>11</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>QR Code · Accès et présence</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lblDescQR_4">
-           <property name="text">
-            <string>Générer le QR code de chaque salle
+         <property name="text">
+          <string>Générer le QR code de chaque salle
 Vérifier l'accès et la présence des équipes
 Suivre l'occupation en temps réel</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frameSaisieQR_4">
-           <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QLineEdit" name="leCodeQR_4">
-              <property name="placeholderText">
-               <string>Scannez ou saisissez le code</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnValiderQR_4">
-              <property name="text">
-               <string>Valider</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QFrame" name="frameSaisieQR_4">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>115</y>
+           <width>541</width>
+           <height>65</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::Box</enum>
+         </property>
+         <widget class="QLineEdit" name="leCodeQR_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>15</y>
+            <width>410</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>Scannez ou saisissez le code</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnValiderQR_4">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>15</y>
+            <width>100</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Valider</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="labelFooterSalles">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>840</y>
+          <width>900</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>HACKNOVA — Smart Hackathon Management — Version 1.0.0</string>
+        </property>
        </widget>
        <widget class="QFrame" name="sallesPage_cardStats">
         <property name="geometry">
          <rect>
-          <x>830</x>
-          <y>200</y>
-          <width>571</width>
-          <height>210</height>
+          <x>1000</x>
+          <y>155</y>
+          <width>430</width>
+          <height>220</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -2534,10 +2477,10 @@ Suivre l'occupation en temps réel</string>
         <widget class="QLabel" name="sallesPage_labelStatsTitle">
          <property name="geometry">
           <rect>
-           <x>15</x>
+           <x>20</x>
            <y>8</y>
            <width>400</width>
-           <height>25</height>
+           <height>20</height>
           </rect>
          </property>
          <property name="font">
@@ -2556,46 +2499,27 @@ Suivre l'occupation en temps réel</string>
           <rect>
            <x>10</x>
            <y>35</y>
-           <width>240</width>
-           <height>170</height>
+           <width>190</width>
+           <height>190</height>
           </rect>
          </property>
          <property name="text">
-          <string />
+          <string/>
          </property>
         </widget>
         <widget class="QLabel" name="sallesPage_labelRoleBar">
          <property name="geometry">
           <rect>
-           <x>255</x>
+           <x>200</x>
            <y>35</y>
-           <width>305</width>
-           <height>170</height>
+           <width>230</width>
+           <height>190</height>
           </rect>
          </property>
          <property name="text">
-          <string />
+          <string/>
          </property>
         </widget>
-       </widget>
-       <widget class="QLabel" name="labelFooterSalles">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>930</y>
-          <width>900</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>HACKNOVA — Smart Hackathon Management — Version 1.0.0</string>
-        </property>
        </widget>
       </widget>
      </widget>
@@ -2603,6 +2527,6 @@ Suivre l'occupation en temps réel</string>
    </widget>
   </widget>
  </widget>
- <resources />
- <connections />
+ <resources/>
+ <connections/>
 </ui>
